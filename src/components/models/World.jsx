@@ -1,84 +1,84 @@
-import React, { useRef } from 'react';
-import { useGLTF } from '@react-three/drei';
-import { TextureLoader } from 'three/src/loaders/TextureLoader';
-import { useLoader } from '@react-three/fiber';
+import React, { useRef } from "react";
+import { useGLTF } from "@react-three/drei";
+import { TextureLoader } from "three/src/loaders/TextureLoader";
+import { useLoader } from "@react-three/fiber";
 
-import Shark from './Shark';
-import Sail from './Sail';
-import Gauca from './Gauca';
-import Cloud from './Cloud';
+import Shark from "./Shark";
+import Sail from "./Sail";
+import Gauca from "./Gauca";
+import Cloud from "./Cloud";
 
 export function World(props) {
-  const { nodes, materials } = useGLTF('/models/pirate-raft-world.glb');
-  const colorMap = useLoader(TextureLoader, '/textures/sand2.png');
-  const oceanTexture = useLoader(TextureLoader, '/textures/Ocean.png');
+  const { nodes, materials } = useGLTF("/models/pirate-raft-world.glb");
+  const colorMap = useLoader(TextureLoader, "/textures/sand2.png");
+  const oceanTexture = useLoader(TextureLoader, "/textures/Ocean.png");
   return (
     <group {...props} dispose={null}>
       <group position={[0, 0, 3.14]}>
         <mesh
           geometry={nodes.Cylinder.geometry}
-          material={materials['Wood Bark']}
+          material={materials["Wood Bark"]}
         />
         <mesh geometry={nodes.Cylinder_1.geometry} material={materials.Rope} />
         <mesh
           geometry={nodes.Cylinder_2.geometry}
-          material={materials['Wood - Light']}
+          material={materials["Wood - Light"]}
         />
         <mesh
           geometry={nodes.Cylinder_3.geometry}
-          material={materials['Wood - Dark']}
+          material={materials["Wood - Dark"]}
         />
       </group>
       <group position={[0.25, 0, 1.01]} rotation={[0, 0, -0.01]}>
         <mesh
           geometry={nodes.Cylinder.geometry}
-          material={materials['Wood Bark']}
+          material={materials["Wood Bark"]}
         />
         <mesh geometry={nodes.Cylinder_1.geometry} material={materials.Rope} />
         <mesh
           geometry={nodes.Cylinder_2.geometry}
-          material={materials['Wood - Light']}
+          material={materials["Wood - Light"]}
         />
         <mesh
           geometry={nodes.Cylinder_3.geometry}
-          material={materials['Wood - Dark']}
+          material={materials["Wood - Dark"]}
         />
       </group>
       <group position={[-0.29, 0, -1.03]} rotation={[0, 0, 0.02]}>
         <mesh
           geometry={nodes.Cylinder.geometry}
-          material={materials['Wood Bark']}
+          material={materials["Wood Bark"]}
         />
         <mesh geometry={nodes.Cylinder_1.geometry} material={materials.Rope} />
         <mesh
           geometry={nodes.Cylinder_2.geometry}
-          material={materials['Wood - Light']}
+          material={materials["Wood - Light"]}
         />
         <mesh
           geometry={nodes.Cylinder_3.geometry}
-          material={materials['Wood - Dark']}
+          material={materials["Wood - Dark"]}
         />
       </group>
       <group position={[0, 0, -3.07]}>
         <mesh
           geometry={nodes.Cylinder.geometry}
-          material={materials['Wood Bark']}
+          material={materials["Wood Bark"]}
         />
         <mesh geometry={nodes.Cylinder_1.geometry} material={materials.Rope} />
         <mesh
           geometry={nodes.Cylinder_2.geometry}
-          material={materials['Wood - Light']}
+          material={materials["Wood - Light"]}
         />
         <mesh
           geometry={nodes.Cylinder_3.geometry}
-          material={materials['Wood - Dark']}
+          material={materials["Wood - Dark"]}
         />
       </group>
-      <Gauca initial={0} label={'Chat'} onDrawerToggle={props.onDrawerToggle} />
+      <Gauca initial={0} label={"Chat"} onDrawerToggle={props.onDrawerToggle} />
       <group position={[-4.92, 6.01, -0.02]}>
         <mesh
           geometry={nodes.Cylinder001.geometry}
-          material={materials['Wood Bark']}
+          material={materials["Wood Bark"]}
         />
         <mesh
           geometry={nodes.Cylinder001_1.geometry}
@@ -86,7 +86,7 @@ export function World(props) {
         />
         <mesh
           geometry={nodes.Cylinder001_2.geometry}
-          material={materials['Wood - Light']}
+          material={materials["Wood - Light"]}
         />
       </group>
       <mesh
@@ -101,10 +101,10 @@ export function World(props) {
         rotation={[0, 0, Math.PI / 2]}
         scale={[2.48, 2.48, 3.21]}
         initial={0}
-        label={'Bio'}
+        label={"Bio"}
         onDrawerToggle={props.onDrawerToggle}
       />
-      <Shark
+      {/* <Shark
         geometry={nodes.Shark_Fin.geometry}
         material={materials['Shark Fin']}
         position={[15.88, -0.8, -11.06]}
@@ -112,38 +112,47 @@ export function World(props) {
         scale={[2, 2, 1.83]}
         initial={0}
         label={'Art'}
-        onDrawerToggle={props.onDrawerToggle}
-      />
+        // onDrawerToggle={props.onDrawerToggle}
+      /> */}
       <Shark
         geometry={nodes.Shark_Fin002.geometry}
-        material={materials['Shark Fin']}
+        material={materials["Shark Fin"]}
         position={[-11.39, -0.1, 2.2]}
         rotation={[1.34, 0.08, -2.14]}
         scale={[2, 2, 1.83]}
         initial={0}
-        label={'IT'}
-        onDrawerToggle={props.onDrawerToggle}
+        label={"IT"}
+        link={"https://www.linkedin.com/in/harsha-murupudi"}
+        // onDrawerToggle={props.onDrawerToggle}
       />
-      {/* <Shark
+      {/* <a
+        href="https://sriharshamurupudi.substack.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      > */}
+      <Shark
         geometry={nodes.Shark_Fin003.geometry}
-        material={materials['Shark Fin']}
+        material={materials["Shark Fin"]}
         position={[-6.97, -0.25, -7.23]}
-        rotation={[1.91, -0.26, 0.03]}
+        rotation={[1.91, 0.26, 0.03]}
         scale={[2, 2, 1.83]}
         initial={0}
-        label={'Work'}
-        onDrawerToggle={props.onDrawerToggle}
+        label={"Blog"}
+        link={"https://sriharshamurupudi.substack.com/"}
+        // onDrawerToggle={props.onDrawerToggle}
       />
+      {/* </a> */}
       <Shark
         geometry={nodes.Shark_Fin004.geometry}
-        material={materials['Shark Fin']}
+        material={materials["Shark Fin"]}
         position={[10, -0.15, 2.82]}
         rotation={[Math.PI / 2, 0, -2.19]}
         scale={[2, 2, 1.83]}
         initial={0}
-        label={'Comics'}
-        onDrawerToggle={props.onDrawerToggle}
-      /> */}
+        label={"Art"}
+        link={"https://www.behance.net/harhsa-murupudi"}
+        // onDrawerToggle={props.onDrawerToggle}
+      />
       <mesh
         geometry={nodes.Ocean_2.geometry}
         material={materials.Ocean}
@@ -160,35 +169,35 @@ export function World(props) {
       </mesh>
       <mesh
         geometry={nodes.Tree_Trunk.geometry}
-        material={materials['Tree Trunk']}
+        material={materials["Tree Trunk"]}
         position={[29.82, 0.62, -28.81]}
       />
       <mesh
         geometry={nodes.Tree_Trunk001.geometry}
-        material={materials['Tree Trunk']}
+        material={materials["Tree Trunk"]}
         position={[37.2, 0.2, -22.27]}
         rotation={[0, 1.22, 0]}
       />
       <mesh
         geometry={nodes.Tree_Trunk002.geometry}
-        material={materials['Tree Trunk']}
+        material={materials["Tree Trunk"]}
         position={[37.82, 0.56, -29.77]}
         rotation={[Math.PI, -1.22, Math.PI]}
       />
       <mesh
         geometry={nodes.Tree_Canopy.geometry}
-        material={materials['Tree Canopy']}
+        material={materials["Tree Canopy"]}
         position={[30.82, 10.04, -28.81]}
       />
       <mesh
         geometry={nodes.Tree_Canopy001.geometry}
-        material={materials['Tree Canopy']}
+        material={materials["Tree Canopy"]}
         position={[37.54, 9.62, -23.21]}
         rotation={[0, 1.22, 0]}
       />
       <mesh
         geometry={nodes.Tree_Canopy002.geometry}
-        material={materials['Tree Canopy']}
+        material={materials["Tree Canopy"]}
         position={[37.48, 9.98, -28.84]}
         rotation={[Math.PI, -1.22, Math.PI]}
       />
@@ -241,4 +250,4 @@ export function World(props) {
   );
 }
 
-useGLTF.preload('/models/pirate-raft-world.glb');
+useGLTF.preload("/models/pirate-raft-world.glb");

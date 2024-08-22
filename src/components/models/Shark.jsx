@@ -1,7 +1,8 @@
-import React, { useRef, useState, useEffect } from 'react';
-import * as THREE from 'three';
-import { useFrame } from '@react-three/fiber';
-import { Html } from '@react-three/drei';
+import React, { useRef, useState, useEffect } from "react";
+import * as THREE from "three";
+import { useFrame } from "@react-three/fiber";
+import { Html } from "@react-three/drei";
+import { navigate } from "gatsby";
 
 export default function Shark({
   initial,
@@ -9,6 +10,7 @@ export default function Shark({
   material,
   children,
   label,
+  link,
   onDrawerToggle,
   ...props
 }) {
@@ -33,13 +35,14 @@ export default function Shark({
       {...props}
       onPointerOver={(e) => set(true)}
       onPointerOut={() => set(false)}
-      onClick={() => onDrawerToggle(label)}
+      // onClick={() => onDrawerToggle(label)}
+      onClick={() => window.open(link, "_blank")}
     >
       <group ref={ref}>
         <mesh geometry={geometry} material={material} />
         {true && (
           <Html distanceFactor={10} zIndexRange={[2, 6]}>
-            <div className='content'>{label}</div>
+            <div className="content">{label}</div>
           </Html>
         )}
       </group>
