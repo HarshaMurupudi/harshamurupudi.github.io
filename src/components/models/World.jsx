@@ -138,7 +138,7 @@ export function World(props) {
         scale={[2, 2, 1.83]}
         initial={0}
         label={"Blog"}
-        link={"https://sriharshamurupudi.substack.com/"}
+        link={"https://x.com/murupudi"}
         // onDrawerToggle={props.onDrawerToggle}
       />
       {/* </a> */}
@@ -150,7 +150,7 @@ export function World(props) {
         scale={[2, 2, 1.83]}
         initial={0}
         label={"Art"}
-        link={"https://www.behance.net/harhsa-murupudi"}
+        link={"https://www.instagram.com/harshamurupudi/"}
         // onDrawerToggle={props.onDrawerToggle}
       />
       <mesh
